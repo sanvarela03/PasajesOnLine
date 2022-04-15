@@ -1,0 +1,1 @@
+INSERT INTO pasajeros (nombres, apellidos, username, password) VALUES ( 'n1', 'ap1','username1', 'pass01');
