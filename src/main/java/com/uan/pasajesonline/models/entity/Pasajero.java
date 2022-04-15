@@ -1,4 +1,4 @@
-package com.uan.pasajesonline.models;
+package com.uan.pasajesonline.models.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
