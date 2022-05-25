@@ -1,4 +1,4 @@
-package com.uan.pasajesonline.models.services;
+package com.uan.pasajesonline.models.services.Pasajero;
 
 import com.uan.pasajesonline.models.entity.Pasajero;
 

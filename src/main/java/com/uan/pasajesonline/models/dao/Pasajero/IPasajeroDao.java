@@ -1,4 +1,4 @@
-package com.uan.pasajesonline.models.dao;
+package com.uan.pasajesonline.models.dao.Pasajero;
 
 import com.uan.pasajesonline.models.entity.Pasajero;
 import org.springframework.data.repository.CrudRepository;

@@ -1,33 +1,42 @@
 package com.uan.pasajesonline.models.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity(name = "pasajeros")
 public class Pasajero {
+
+    //ATRIBUTOS
     @Id
+    @Column(name = "pasajero_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pasajeroID;
-
+    private Long id;
     private String nombres;
-
     private String apellidos;
-
+    @Column(name = "fecha_de_nacimiento")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date fechaDeNacimiento;
-
     private String username;
-
     private String password;
 
-    public Long getPasajeroID() {
-        return pasajeroID;
+    //RELACIONES
+    @JsonIgnore
+    @OneToMany(mappedBy = "pasajero")
+    private List<PasajeroViaje> pasajerosViajes = new ArrayList<>();
+
+    // GET Y SET
+    public Long getId() {
+        return id;
     }
 
-    public void setPasajeroID(Long pasajeroID) {
-        this.pasajeroID = pasajeroID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombres() {
@@ -68,5 +77,13 @@ public class Pasajero {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<PasajeroViaje> getPasajerosViajes() {
+        return pasajerosViajes;
+    }
+
+    public void setPasajerosViajes(List<PasajeroViaje> pasajerosViajes) {
+        this.pasajerosViajes = pasajerosViajes;
     }
 }

@@ -1,6 +1,6 @@
-package com.uan.pasajesonline.models.services;
+package com.uan.pasajesonline.models.services.Pasajero;
 
-import com.uan.pasajesonline.models.dao.IPasajeroDao;
+import com.uan.pasajesonline.models.dao.Pasajero.IPasajeroDao;
 import com.uan.pasajesonline.models.entity.Pasajero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

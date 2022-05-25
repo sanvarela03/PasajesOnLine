@@ -1,9 +1,8 @@
-package com.uan.pasajesonline.controllers;
+package com.uan.pasajesonline.controllers.Pasajero;
 
 
-import com.uan.pasajesonline.models.dao.IPasajeroDao;
 import com.uan.pasajesonline.models.entity.Pasajero;
-import com.uan.pasajesonline.models.services.IPasajeroService;
+import com.uan.pasajesonline.models.services.Pasajero.IPasajeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
