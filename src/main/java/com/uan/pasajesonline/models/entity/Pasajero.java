@@ -1,12 +1,15 @@
 package com.uan.pasajesonline.models.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 
 @Entity(name = "pasajeros")
 public class Pasajero {
@@ -18,9 +21,11 @@ public class Pasajero {
     private Long id;
     private String nombres;
     private String apellidos;
+
+
     @Column(name = "fecha_de_nacimiento")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC-05")
     private Date fechaDeNacimiento;
     private String username;
     private String password;
@@ -85,5 +90,18 @@ public class Pasajero {
 
     public void setPasajerosViajes(List<PasajeroViaje> pasajerosViajes) {
         this.pasajerosViajes = pasajerosViajes;
+    }
+
+    @Override
+    public String toString() {
+        return "Pasajero{" +
+                "id=" + id +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fechaDeNacimiento=" + fechaDeNacimiento +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", pasajerosViajes=" + pasajerosViajes +
+                '}';
     }
 }

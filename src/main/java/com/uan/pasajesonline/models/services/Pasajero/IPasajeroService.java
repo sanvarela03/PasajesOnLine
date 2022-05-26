@@ -7,4 +7,10 @@ import java.util.List;
 public interface IPasajeroService {
 
     public List<Pasajero> findAll();
+
+    public Pasajero findById(Long id);
+
+    public Pasajero save(Pasajero pasajero);
+
+    public void delete(Long id);
 }
